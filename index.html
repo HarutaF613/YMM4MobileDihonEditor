@@ -6,6 +6,27 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="台本">
+<link rel="apple-touch-icon" id="touch-icon" href="">
+<script>
+// 絵文字をアイコン画像として生成
+(function(){
+  const canvas = document.createElement('canvas');
+  canvas.width = 180; canvas.height = 180;
+  const ctx = canvas.getContext('2d');
+  // 背景色（ダークパープル）
+  ctx.fillStyle = '#0e0e12';
+  ctx.beginPath();
+  ctx.roundRect(0, 0, 180, 180, 36);
+  ctx.fill();
+  // 絵文字
+  ctx.font = '110px serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('🎬', 90, 95);
+  // linkタグに設定
+  document.getElementById('touch-icon').href = canvas.toDataURL('image/png');
+})();
+</script>
 <title>台本エディタ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
